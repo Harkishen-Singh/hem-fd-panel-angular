@@ -17,6 +17,11 @@ app.config(function($routeProvider,$locationProvider){
         controller:'homeController',
         title:'Home | dashboard'
     })
+    .when('/patients', {
+        templateUrl:'./html_components/patients.html',
+        controller:'patientsController',
+        title:'Patients'
+    })
 })
 app.controller('defaultController', function($location){
     $location.path('/login');
@@ -38,4 +43,7 @@ app.controller('loginController', function($scope, $rootScope, $route, $routePar
 })
 app.controller('homeController', function($scope, $location){
     $scope.check = 'harkishen';
+})
+app.controller('patientsController', function($scope,$location) {
+
 })
