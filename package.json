@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "python3 -m http.server",
+    "start":"echo starting server\n designed and developed by NorthropIO, harkishen singh\nusing angularJs 1.7.3\npython3 -m http.server"
   },
   "author": "",
   "license": "ISC",
