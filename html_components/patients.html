@@ -1,5 +1,36 @@
 <header data-ng-include="'htmls_extensions/header.html'"></header>
 <div data-ng-init="patientsinit()" style="margin-left: 15%;margin-right: 15%;" >
     <h3>List of Registered Patients</h3>
+    <hr>
+    <table style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Adhaar</th>
+                <th>Gender</th>
+                <th>Name</th>
+                <th>Disease</th>
+                <th>Mobile</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>45203265489</td>
+                <td>Male</td>
+                <td>Something</td>
+                <td>Haemophilia</td>
+                <td>1236547890</td>
+            </tr>
+            <tr data-ng-if="patients.length>0" data-ng-repeat="p in patients"  >
+                <td>{{p.aadhaar}}</td>
+                <td>{{p.gender}}</td>
+                <td>{{p.firstname}} {{p.lastname}} </td>
+                <td>{{p.disease}}</td>
+                <td>{{p.mobile}}</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+
 </div>
 <footer data-ng-include="'htmls_extensions/footer.html'"></footer>

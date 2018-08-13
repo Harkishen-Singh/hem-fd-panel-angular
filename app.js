@@ -1,6 +1,6 @@
 var app = angular.module('adminHemlata',['ngRoute']);
 var global = {
-    url:'0.0.0.0'
+    url:'http://0.0.0.0:5000'
 };
 
 app.config(function($routeProvider,$locationProvider){
@@ -44,6 +44,28 @@ app.controller('loginController', function($scope, $rootScope, $route, $routePar
 app.controller('homeController', function($scope, $location){
     $scope.check = 'harkishen';
 })
-app.controller('patientsController', function($scope,$location) {
+app.controller('patientsController', function($scope,$location,$http) {
 
+    $scope.patientsinit = function() {
+        console.warn('patientsinit called')
+        $http({
+            url:global.url + '/getPatients',
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            }
+            })
+            .then(res=>{
+                res = res.data;
+                if(res['Success']=='Y'){
+                    console.warn(res['value'][0]);
+                    $scope.patients = res.value;
+                }
+                    
+                else
+                    console.error('some err while receiving patients info from server')
+            })
+    }
+
+    
 })
