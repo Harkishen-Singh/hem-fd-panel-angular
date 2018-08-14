@@ -22,6 +22,11 @@ app.config(function($routeProvider,$locationProvider){
         controller:'patientsController',
         title:'Patients'
     })
+    .when('/patients/view', {
+        templateUrl:'./html_components/patientsView.html',
+        controller:'patientsController',
+        title:'View More - Patients'  
+    })
 })
 app.controller('defaultController', function($location){
     $location.path('/login');
@@ -66,6 +71,37 @@ app.controller('patientsController', function($scope,$location,$http) {
                     console.error('some err while receiving patients info from server')
             })
     }
-
+    $scope.patientViewMore = function(){
+        console.warn('patients viewmore called')
+        $http({
+            url:global.url + '/patientsViewMore',
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            data:'adhaar='+$location.search().adhaar+'&disease='+$location.search().disease
+        })
+        .then(res => {
+            res = res.data;
+            console.warn(res['value']);
+            if(res.Success == 'Y'){
+                $scope.disease = res['value']['disease']
+                $scope.timeclient = res['value']['timeclient']
+                $scope.day = res['value']['dayclient']
+                $scope.gender = res['value']['gender']
+                $scope.fname = res['value']['firstname']
+                $scope.lname = res['value']['lastname']
+                $scope.fathername = res['value']['fathername']
+                $scope.mothername = res['value']['mothername']
+                $scope.mobile = res['value']['mobile']
+                $scope.dob = res['value']['dob']
+                $scope.address = res['value']['address']
+                $scope.aadhaar = res['value']['aadhaar']
+                // $scope.disease = res['value']['disease']
+            }
+            else
+                console.error('some err while patients view more info from server')
+        })
+    }
     
 })

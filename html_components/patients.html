@@ -2,30 +2,40 @@
 <div data-ng-init="patientsinit()" style="margin-left: 15%;margin-right: 15%;" >
     <h3>List of Registered Patients</h3>
     <hr>
+
     <table style="width: 100%;">
         <thead>
             <tr>
+                <th>SL</th>
                 <th>Adhaar</th>
                 <th>Gender</th>
                 <th>Name</th>
                 <th>Disease</th>
                 <th>Mobile</th>
+                <th>D.O.B.</th>
             </tr>
         </thead>
         <tbody>
             <tr>
+                <td>1</td>
                 <td>45203265489</td>
                 <td>Male</td>
                 <td>Something</td>
                 <td>Haemophilia</td>
                 <td>1236547890</td>
+                <td>dfih</td>
             </tr>
+
             <tr data-ng-if="patients.length>0" data-ng-repeat="p in patients"  >
+                <td>{{p.count}}</td>
                 <td>{{p.aadhaar}}</td>
                 <td>{{p.gender}}</td>
                 <td>{{p.firstname}} {{p.lastname}} </td>
                 <td>{{p.disease}}</td>
                 <td>{{p.mobile}}</td>
+                <td>{{p.dob}}</td>
+                <td><a href="/?#!/patients/view?adhaar={{p.aadhaar}}&disease={{p.disease}}"><button class="btn btn-success" style="padding: 2px;font-size:10px; " 
+                    >View</button></a>  </td>
             </tr>
         </tbody>
         
