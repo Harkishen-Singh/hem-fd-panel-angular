@@ -1,0 +1,35 @@
+<div data-ng-init="volunteersinit()" style="margin-left: 15%;margin-right: 15%;" >
+        <h3>List of Registered Patients</h3>
+        <hr>
+    
+        <table style="width: 100%;">
+            <thead>
+                <tr>
+                    <th>SL</th>
+                    <th>Adhaar</th>
+                    <th>Gender</th>
+                    <th>Name</th>
+                    <th>Mobile</th>
+                    <th>D.O.B.</th>
+                    <th>Date of Sign Up</th>
+                </tr>
+            </thead>
+            <tbody>
+    
+                <tr data-ng-if="vol.length>0" data-ng-repeat="p in vol"  >
+                    <td>{{$index + 1}}</td>
+                    <td>{{p.aadhaar}}</td>
+                    <td>{{p.gender}}</td>
+                    <td>{{p.firstname}} {{p.lastname}} </td>
+                    <td>{{p.mobile}}</td>
+                    <td>{{p.dob}}</td>
+                    <td>{{p.dayclient}}</td>
+                    <td><a href="/?#!/volunteers/view?adhaar={{p.aadhaar}}"><button class="btn btn-success" style="padding: 2px;font-size:10px; " 
+                        >View</button></a>  </td>
+                </tr>
+            </tbody>
+            
+        </table>
+    
+    
+    </div>
