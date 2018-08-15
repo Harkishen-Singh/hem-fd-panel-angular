@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "http-server",
-    "start":"echo starting server\n designed and developed by NorthropIO, harkishen singh\nusing angularJs 1.7.3\npython3 -m http.server"
+    "start":"echo starting server\n designed and developed by NorthropIO, harkishen singh\nusing angularJs 1.7.3\npython3 -m http.server 5000"
   },
   "author": "",
   "license": "ISC",
