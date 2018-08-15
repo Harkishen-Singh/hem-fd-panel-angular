@@ -1,6 +1,7 @@
 var app = angular.module('adminHemlata',['ngRoute']);
 var global = {
-    url:'http://0.0.0.0:5000'
+    // url:'http://0.0.0.0:5000'
+    url:'https://hemalata.herokuapp.com'
 };
 
 app.config(function($routeProvider,$locationProvider){
