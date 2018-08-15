@@ -1,4 +1,4 @@
-<header data-ng-include="'htmls_extensions/header.html'"></header>
+
 <div data-ng-init="patientsinit()" style="margin-left: 15%;margin-right: 15%;" >
     <h3>List of Registered Patients</h3>
     <hr>
@@ -16,18 +16,9 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td>45203265489</td>
-                <td>Male</td>
-                <td>Something</td>
-                <td>Haemophilia</td>
-                <td>1236547890</td>
-                <td>dfih</td>
-            </tr>
 
             <tr data-ng-if="patients.length>0" data-ng-repeat="p in patients"  >
-                <td>{{p.count}}</td>
+                <td>{{$index + 1}}</td>
                 <td>{{p.aadhaar}}</td>
                 <td>{{p.gender}}</td>
                 <td>{{p.firstname}} {{p.lastname}} </td>
@@ -43,4 +34,3 @@
 
 
 </div>
-<footer data-ng-include="'htmls_extensions/footer.html'"></footer>

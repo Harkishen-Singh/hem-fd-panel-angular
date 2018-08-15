@@ -33,7 +33,7 @@ app.controller('defaultController', function($location){
 })
 app.controller('loginController', function($scope, $rootScope, $route, $routeParams, $location){
     $scope.name='this';
-    
+    $rootScope.showHeader = false;
     $scope.checkLogin = function(){
         console.warn($scope.username+' is the $scope')
         console.warn('pass is '+$scope.password)
@@ -41,13 +41,15 @@ app.controller('loginController', function($scope, $rootScope, $route, $routePar
          {
             $scope.wrongPass='';
              $location.path('/dashboard');
+             $rootScope.showHeader = true;
         }
         else
             $scope.wrongPass='Wrong password entered';
     }
 })
-app.controller('homeController', function($scope, $location){
+app.controller('homeController', function($scope, $location,$rootScope){
     $scope.check = 'harkishen';
+    $rootScope.showHeader = true;
 })
 app.controller('patientsController', function($scope,$location,$http) {
 
