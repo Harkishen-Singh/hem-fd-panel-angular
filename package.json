@@ -5,11 +5,13 @@
   "main": "index.js",
   "scripts": {
     "test": "http-server",
-    "start":"echo starting server\n designed and developed by NorthropIO, harkishen singh\nusing angularJs 1.7.3\npython3 -m http.server 5000"
+    "start": "http-server -a localhost -p 8000 -c-1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "angular": "^1.7.3"
+    "angular": "^1.7.3",
+    "express": "^4.16.3",
+    "http-server": "^0.9.0"
   }
 }
