@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "http-server",
-    "start": "http-server -a localhost -p 8000 -c-1"
+    "start": "http-server -a localhost -p 5000 -c-1"
   },
   "author": "",
   "license": "ISC",
